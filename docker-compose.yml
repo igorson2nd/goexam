@@ -1,0 +1,16 @@
+services:
+  db:
+    image: mariadb
+    restart: always
+    ports:
+     - 3306:3306
+    # no volumes needed for testing only
+    environment:
+      MARIADB_ROOT_PASSWORD: rootpass
+      MARIADB_DATABASE: exam
+
+  cache:
+    image: redis
+    restart: always
+    ports:
+     - 6379:6379

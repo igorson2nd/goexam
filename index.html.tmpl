@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Articles</title>
+</head>
+<body>
+
+<h1>List of articles</h1>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Lang</th>
+    <th>Title</th>
+    <th>Content</th>
+  </tr>
+  {{range .}}
+    {{ if (ne .Title "") }}
+    <tr>
+      <td>{{.ID}}</td>
+      <td>gb</td>
+      <td>{{.Title}}</td>
+      <td>
+        {{ if check .ID false }}
+          <a href="/article_content/gb/{{.ID}}">content</a>
+        {{end}}
+      </td>
+    </tr>
+    {{end}}
+    {{ if (ne .TitleTraditional "") }}
+    <tr>
+      <td>{{.ID}}</td>
+      <td>b5</td>
+      <td>{{.TitleTraditional}}</td>
+      <td>
+        {{ if check .ID true }}
+          <a href="/article_content/b5/{{.ID}}">content</a>
+        {{end}}
+      </td>
+    </tr>
+    {{end}}
+  {{end}}
+</table>
+
+</body>
+</html>

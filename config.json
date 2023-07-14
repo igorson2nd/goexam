@@ -1,0 +1,8 @@
+{
+  "BaseUrl": "https://www.secretchina.com",
+  "Concurrency": 5,
+  "TickInterval": 60,
+  "DbDsn": "root:rootpass@tcp(127.0.0.1:3306)/exam",
+  "LoginPass": "pass",
+  "JwtSecret": "secret123"
+}
